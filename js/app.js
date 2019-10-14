@@ -89,6 +89,18 @@ document.addEventListener('init', function (event) {
       $("#content")[0].load("home.html");  
       $("#sidemenu")[0].close();   
     });
+
+    $("#setting").click(function () {
+      $("#content")[0].load("setting.html");  
+      $("#sidemenu")[0].close();   
+    });
+  }
+
+  if (page.id === 'settingPage') {
+    console.log("settingPage");
+    $("#save").click(function () {
+      $("#content")[0].load("home.html");      
+    });
   }
 
   if (page.id === 'loginPage') {
