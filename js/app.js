@@ -106,7 +106,7 @@ document.addEventListener('init', function (event) {
   if (page.id === 'loginPage') {
     console.log("loginPage");
 
-    $("#signinbtn").click(function(){
+    $("#login").click(function(){
       var username = $("#username").val();
       var password = $("#password").val();
       firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
@@ -116,8 +116,19 @@ document.addEventListener('init', function (event) {
 
     })
 
+    $("#regis").click(function () {
+      $("#content")[0].load("register.html");      
+    });
+
     $("#backhomebtn").click(function () {
       $("#content")[0].load("home.html");      
+    });
+  }
+
+  if (page.id === 'registerPage') {
+    console.log("registerPage");
+    $("#backtologin").click(function () {
+      $("#content")[0].load("login.html");      
     });
   }
 });
