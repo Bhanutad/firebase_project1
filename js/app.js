@@ -62,7 +62,49 @@ document.addEventListener('init', function (event) {
 
       });
     });
+  }
 
+  if (page.id === 'homePage') {
+    console.log("homePage");
+    $("#clickfood").click(function () {
+      $("#content").load("restaurant.html");      
+    });
+    
+    $("#clickbav").click(function () {
+      $("#content").load("restaurant.html");      
+    });
+
+    $("#clickdessert").click(function () {
+      $("#content").load("restaurant.html");      
+    });
+
+    $("#clicklocal").click(function () {
+      $("#content").load("restaurant.html");      
+    });
+  }
+
+  if (page.id === 'restaurantPage') {
+    console.log("restaurantPage");
+    $("#card").empty();
+    db.collection("restaurant").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          
+        var item = `
+        <ons-card-item modifier="nodivider" id="${doc.data().id}" class="recomended_item">
+            <div class="thumbnail" style="background-image: url('${doc.data().photoUrl}')">
+            </div>
+            <div class="recomended_item_title" id="item1_name">${doc.data().name}</div>
+        </ons-card-item>`
+
+        $("#card").append(item);
+
+
+      });
+    });   
+  
+    $("#backtohome").click(function () {
+      $("#content").load("home.html");      
+    });
   }
 
   if (page.id === 'menuPage') {
