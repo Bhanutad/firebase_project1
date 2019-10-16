@@ -3,19 +3,22 @@
                 <ons-button modifier="quiet" class="left" id="backtohome" style="color: salmon;">BACK</ons-button>
                 <div class="center">RESTAURAN LIST</div>
             </ons-toolbar>
-    <div class="restaurant">
-            <ons-card auto-scroll auto-scroll-ratio="0.5" auto-refresh swipeable overscrollable item-width="150px"
-            class="restaurant" id="card">
-            </ons-card>
+    <div id="clickmenu">
+            <ons-list class="restaurant" id="card">
+            </ons-list>
     </div>
 
 </ons-page>
 <style type="text/css">
 
     .thumbnail {
-        width: 150px;
-        height: 150px;
-        background-size: 100%;
+        text-align: left;
+        width: 130px;
+        height: 130px;
         background-color: white;
+
+    }
+    .name{
+        text-align: right;  
     }
 </style>

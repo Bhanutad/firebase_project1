@@ -90,20 +90,28 @@ document.addEventListener('init', function (event) {
       querySnapshot.forEach((doc) => {
           
         var item = `
-        <ons-card-item modifier="nodivider" id="${doc.data().id}" class="recomended_item">
-            <div class="thumbnail" style="background-image: url('${doc.data().photoUrl}')">
-            </div>
-            <div class="recomended_item_title" id="item1_name">${doc.data().name}</div>
-        </ons-card-item>`
+        <ons-card id="${doc.data().id}">
+        <ons-row>
+        <img class="thumbnail" src="${doc.data().photoUrl}" > 
+        <div>
+        &nbsp;&nbsp&nbsp;&nbsp;<B><h class="name">${doc.data().name}</h></B><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<I><span class="name">${doc.data().type}</span></I><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+        <span class="name">${doc.data().rank}</span><br>
+        </div>
+        <ons-row>
+        </ons-card>`
 
         $("#card").append(item);
-
-
       });
     });   
   
     $("#backtohome").click(function () {
       $("#content").load("home.html");      
+    });
+
+    $("#clickmenu").click(function () {
+      $("#content").load("listmenu.html");      
     });
   }
 
