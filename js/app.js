@@ -56,11 +56,12 @@ document.addEventListener('init', function (event) {
             </div>
             <div class="recomended_item_title" id="item1_name">${doc.data().name}</div>
         </ons-carousel-item>`
-
         $("#carousel").append(item);
-
-
       });
+    });
+
+    $("#clickrecomended").click(function () {
+      $("#content").load("listmenu.html");      
     });
 
     $("#carouselpro").empty();
@@ -73,11 +74,12 @@ document.addEventListener('init', function (event) {
             </div>
             <div class="recomended_item_title" id="item1_name">${doc.data().name}</div>
         </ons-carousel-item>`
-
         $("#carouselpro").append(item);
-
-
       });
+    });
+
+    $("#clickpro").click(function () {
+      $("#content").load("restaurant.html");      
     });
   }
 
