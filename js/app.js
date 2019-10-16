@@ -150,9 +150,10 @@ document.addEventListener('init', function (event) {
         &emsp;<B><h class="name">${doc.data().name}</h></B><br>
         &emsp;&nbsp;&nbsp<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
         <br><br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<ons-fab>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <ons-fab>
         <ons-icon icon="md-plus"></ons-icon>
-    </ons-fab>
+        </ons-fab>
         <ons-row>
         </ons-card>`
 
@@ -162,6 +163,10 @@ document.addEventListener('init', function (event) {
 
     $("#backtorest").click(function () {
       $("#content").load("restaurant.html");      
+    });
+
+    $("#clickadd").click(function () {
+      $("#content").load("home.html");      
     });
   }  
 
@@ -207,7 +212,7 @@ document.addEventListener('init', function (event) {
     console.log("loginPage");
 
     $("#login").click(function(){
-      var username = $("#username").val();
+      var username = $("#email").val();
       var password = $("#password").val();
       firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
 
