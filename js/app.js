@@ -132,6 +132,31 @@ document.addEventListener('init', function (event) {
     });
   }
 
+  if (page.id === 'listmenuPage') {
+    console.log("listmenuPage");
+    $("#card").empty();
+    db.collection("menulist").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          
+        var item = `
+        <ons-card id="${doc.data().id}">
+        <ons-row>
+        <img class="thumbnail" src="${doc.data().photoUrl}" > 
+        <div>
+        &nbsp;&nbsp&nbsp;&nbsp;<B><h class="name">${doc.data().name}</h></B><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
+        <ons-row>
+        </ons-card>`
+
+        $("#card").append(item);
+      });
+    });   
+
+    $("#backtorest").click(function () {
+      $("#content").load("restaurant.html");      
+    });
+  }  
+
   if (page.id === 'menuPage') {
     console.log("menuPage");
 
