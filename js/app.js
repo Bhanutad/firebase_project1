@@ -111,9 +111,10 @@ document.addEventListener('init', function (event) {
         <ons-row>
         <img class="thumbnail" src="${doc.data().photoUrl}" > 
         <div>
-        &nbsp;&nbsp&nbsp;&nbsp;<B><h class="name">${doc.data().name}</h></B><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<I><span class="name">${doc.data().type}</span></I><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
+        <br><br>
+        &emsp;<B><h class="name">${doc.data().name}</h></B><br>
+        &emsp;&nbsp;&nbsp<I><span class="name">${doc.data().type}</span></I><br>
+        &emsp;&nbsp;&nbsp<ons-icon icon="fa-star" fixed-width="false"></ons-icon>
         <span class="name">${doc.data().rank}</span><br>
         </div>
         <ons-row>
@@ -143,8 +144,13 @@ document.addEventListener('init', function (event) {
         <ons-row>
         <img class="thumbnail" src="${doc.data().photoUrl}" > 
         <div>
-        &nbsp;&nbsp&nbsp;&nbsp;<B><h class="name">${doc.data().name}</h></B><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
+        <br><br>
+        &emsp;<B><h class="name">${doc.data().name}</h></B><br>
+        &emsp;&nbsp;&nbsp<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
+        <br><br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<ons-fab>
+        <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
         <ons-row>
         </ons-card>`
 
