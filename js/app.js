@@ -148,7 +148,7 @@ document.addEventListener('init', function (event) {
         <div>
         <br><br>
         &emsp;<B><h class="name">${doc.data().name}</h></B><br>
-        &emsp;&nbsp;&nbsp<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
+        &emsp;&nbsp;&nbsp;<span class="name">${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
         <br><br>
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <ons-fab>
@@ -166,9 +166,34 @@ document.addEventListener('init', function (event) {
     });
 
     $("#clickadd").click(function () {
-      $("#content").load("home.html");      
+      $("#content").load("order.html");      
     });
-  }  
+  }
+  
+  if (page.id === 'orderPage') {
+    console.log("orderPage");
+    $("#card").empty();
+    db.collection("order").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          
+        var item = `
+        <ons-card id="${doc.data().id}">
+        <ons-row>
+        <img class="thumbnail" src="${doc.data().photoUrl}" > 
+        <div>
+        &emsp;<B><h class="name">${doc.data().name}</h></B><br>
+        &emsp;&nbsp;&nbsp;<span class="name">Amount : ${doc.data().how}</span><br>
+        &emsp;&nbsp;&nbsp;<span class="name">Price : ${doc.data().price}</span>&nbsp;&nbsp<B>Bhat<B>
+        `
+
+        $("#card").append(item);
+      });
+    });  
+    
+    $("#backtomenu").click(function () {
+      $("#content").load("listmenu.html");      
+    });
+  }
 
   if (page.id === 'menuPage') {
     console.log("menuPage");
