@@ -193,6 +193,10 @@ document.addEventListener('init', function (event) {
     $("#backtomenu").click(function () {
       $("#content").load("listmenu.html");      
     });
+
+    $("#payment").click(function () {
+      $("#content").load("payment.html");      
+    });
   }
 
   if (page.id === 'menuPage') {
