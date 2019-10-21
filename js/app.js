@@ -61,7 +61,7 @@ document.addEventListener('init', function (event) {
     });
 
     $("#clickrecomended").click(function () {
-      $("#content").load("listmenu.html");      
+      $("#content").load("pizza.html");      
     });
 
     $("#carouselpro").empty();
@@ -131,14 +131,14 @@ document.addEventListener('init', function (event) {
     });
 
     $("#clickmenu").click(function () {
-      $("#content").load("listmenu.html");      
+      $("#content").load("pizza.html");      
     });
   }
 
-  if (page.id === 'listmenuPage') {
-    console.log("listmenuPage");
+  if (page.id === 'pizzaPage') {
+    console.log("pizzaPage");
     $("#card").empty();
-    db.collection("menulist").get().then((querySnapshot) => {
+    db.collection("pizza").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
           
         var item = `
@@ -191,7 +191,7 @@ document.addEventListener('init', function (event) {
     });  
     
     $("#backtomenu").click(function () {
-      $("#content").load("listmenu.html");      
+      $("#content").load("pizza.html");      
     });
 
     $("#payment").click(function () {
