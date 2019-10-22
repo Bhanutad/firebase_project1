@@ -185,6 +185,10 @@ document.addEventListener('init', function (event) {
     $("#backtomenu").click(function () {
       $("#content").load("menulist.html");      
     });
+
+    $("#payment").click(function () {
+      $("#content").load("home.html");      
+    });
   }
 
   if (page.id === 'menuPage') {
