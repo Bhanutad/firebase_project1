@@ -60,10 +60,6 @@ document.addEventListener('init', function (event) {
       });
     });
 
-    $("#clickrecomended").click(function () {
-      $("#content").load("pizza.html");      
-    });
-
     $("#carouselpro").empty();
     db.collection("promotion").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -76,10 +72,6 @@ document.addEventListener('init', function (event) {
         </ons-carousel-item>`
         $("#carouselpro").append(item);
       });
-    });
-
-    $("#clickpro").click(function () {
-      $("#content").load("restaurant.html");      
     });
   }
 
@@ -131,14 +123,14 @@ document.addEventListener('init', function (event) {
     });
 
     $("#clickmenu").click(function () {
-      $("#content").load("pizza.html");      
+      $("#content").load("menulist.html");      
     });
   }
 
-  if (page.id === 'pizzaPage') {
-    console.log("pizzaPage");
+  if (page.id === 'menulistPage') {
+    console.log("menulistPage");
     $("#card").empty();
-    db.collection("pizza").get().then((querySnapshot) => {
+    db.collection("menulist").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
           
         var item = `
@@ -191,11 +183,7 @@ document.addEventListener('init', function (event) {
     });  
     
     $("#backtomenu").click(function () {
-      $("#content").load("pizza.html");      
-    });
-
-    $("#payment").click(function () {
-      $("#content").load("payment.html");      
+      $("#content").load("menulist.html");      
     });
   }
 
